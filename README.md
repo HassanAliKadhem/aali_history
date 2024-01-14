@@ -1,16 +1,14 @@
 # aali_history
 
-A new Flutter project about Aali village.
+A Flutter project about Aali village and it's great history.
 
-## Getting Started
+the first screen is a brief description of the village
+![Aali history screen](ScreenshotHistory.png)
 
-This project is a starting point for a Flutter application.
+you also have a list of Mosques in the village with an image and a location in the map
 
-A few resources to get you started if this is your first Flutter project:
+![Aali Mosques screen](ScreenshotMosques.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+finally there is a screen with a lot of historical images of the village
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Aali gallery screen](ScreenshotGallery.png)
