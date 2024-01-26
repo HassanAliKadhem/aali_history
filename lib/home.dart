@@ -28,7 +28,7 @@ class _AaliHomeState extends State<AaliHome> {
             duration: const Duration(milliseconds: 500),
             child: const [
               InfoPage(),
-              Placeholder(),
+              // Placeholder(),
               MosquePage(),
               GalleryPage(),
               SettingsPage(),
@@ -37,10 +37,10 @@ class _AaliHomeState extends State<AaliHome> {
           FloatingNavigationBar(
             homePageIcons: const [
               Icon(Icons.info),
-              Icon(Icons.short_text),
+              // Icon(Icons.short_text),
               Icon(Icons.mosque),
               Icon(Icons.image),
-              Icon(Icons.settings),
+              Icon(Icons.info),
             ],
             selectedPage: selectedPage,
             onSelected: (value) {

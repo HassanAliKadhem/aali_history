@@ -15,7 +15,8 @@ class AaliApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Aali History',
-      theme: ThemeData(
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
         useMaterial3: true,
         dividerColor: Colors.transparent,
         colorScheme: ColorScheme.fromSeed(
