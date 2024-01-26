@@ -20,25 +20,35 @@ List<Mosque> mosques = [
         "%D9%85%D8%B3%D8%AC%D8%AF%20%D8%B9%D9%8A%D9%86%20%D8%B1%D8%B3%D8%AA%D8%A7%D9%86&t"),
   ),
   Mosque(
-    "مسجد الإمام علي (السادة)",
-    "",
+    "مسجد الإمام علي\n(السادة)",
+    "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1685&strServerFolder=PhotoGalary",
     getMapView("مسجد الامام علي (السادة)"),
   ),
   Mosque("مسجد محاذي لضريح الشيخ محمد", "", ""),
-  Mosque("مسجد الغراية", "", ""),
-  Mosque("مسجد الأخضر", "", ""),
+  Mosque(
+      "مسجد الغراية",
+      "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1658&strServerFolder=PhotoGalary",
+      getMapView("مسجد الغراية عالي")),
+  Mosque("مسجد الأخضر", "", getMapView("مسجد الأخضر")),
   Mosque("مسجد العلويات", "", ""),
   Mosque("مسجد الحوطة القنطارة", "", ""),
-  Mosque("مسجد الكرد", "", ""),
-  Mosque("مسجد السلامية الشرقي (أبو لومي)", "", ""),
-  Mosque("مسجد السلامية الغربي", "", ""),
-  Mosque("مسجد ملا حسين", "", ""),
-  Mosque("مسجد الجبيلية", "", ""),
-  Mosque("مسجد الحوراء", "", ""),
-  Mosque("مسجد النبيه إبراهيم", "", ""),
-  Mosque("مسجد الزهراء", "", ""),
   Mosque(
-    "جامع عالي القديم (جامع عالي معن)",
+      "مسجد الكرد",
+      "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1622&strServerFolder=PhotoGalary",
+      getMapView("مسجد الكرد عالي")), // https://www.jwd.gov.bh/en/mosques/5243/
+  Mosque(
+      "مسجد السلامية الشرقي\n(أبو لومي)",
+      "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1721&strServerFolder=PhotoGalary",
+      getMapView(
+          "مسجد السلامية الشرقي\n(أبو لومي)")), //https://www.jwd.gov.bh/ar/mosques/5976/
+  Mosque("مسجد السلامية الغربي", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1750&strServerFolder=PhotoGalary", getMapView("مسجد السلامية الغربي عالي")),
+  Mosque("مسجد ملا حسين", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=5110&strServerFolder=RealEstate", getMapView("مسجد ملا حسين عالي")),
+  Mosque("مسجد الجبيلية", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=5184&strServerFolder=RealEstate", getMapView("مسجد الجبيلية عالي")),
+  Mosque("مسجد الحوراء", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=5979&strServerFolder=RealEstate", getMapView("مسجد الحوراء عالي")),
+  Mosque("مسجد النبيه إبراهيم", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1676&strServerFolder=PhotoGalary", getMapView("مسجد النبيه إبراهيم عالي")),
+  Mosque("مسجد الزهراء", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1583&strServerFolder=PhotoGalary", getMapView("مسجد الزهراء عالي")),
+  Mosque(
+    "جامع عالي القديم\n(جامع عالي معن)",
     "http://media.alwasatnews.com/data/2016/5130/images/54944a79aca4cdd1.jpg",
     getMapView("جامع عالي معن"),
   ), // http://www.alwasatnews.com/news/1161732.html
@@ -59,9 +69,9 @@ List<Mosque> mosques = [
     "",
     getMapView("مسجد الإمام الحسين عالي"),
   ),
-  Mosque("مسجد الإمام الحسن", "", ""),
-  Mosque("مسجد الإمام الرضا", "", ""),
-  Mosque("جامع موضي بالقرب من ممشى عالي", "", ""),
+  Mosque("مسجد الإمام الحسن", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=3052&strServerFolder=RealEstate", getMapView("مسجد الإمام الحسن اسكان عالي")),
+  Mosque("مسجد الإمام الرضا", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=3057&strServerFolder=RealEstate", getMapView("مسجد الإمام الرضا اسكان عالي")),
+  Mosque("جامع موضي", "https://lh6.googleusercontent.com/DCcRyDhJPrf8QT5uBtY34fwNwUVEttn3e-BpWfYaXLGgNjGsnBEJJfjVNiX2RYIGGiq05OWCkIZY_ftRBLdBsBU=w16383", getMapView("جامع موضي عالي")),
 ];
 
 String getMapView(String query) {

@@ -9,31 +9,30 @@ class MosquePage extends StatelessWidget {
   const MosquePage({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      child: PageView(
-        scrollDirection: IsLarge.of(context) ? Axis.horizontal : Axis.vertical,
-        children: mosques
-            .where((element) => element.imageUrl != "" && element.mapUrl != "")
-            .map(
-              (mosque) => AdaptivePadding(
-                child: Column(
-                  children: [
-                    FittedBox(
-                      child: Text(
-                        mosque.name,
-                        textScaleFactor: 10,
-                        maxLines: 1,
-                      ),
+    return PageView(
+      scrollDirection: IsLarge.of(context) ? Axis.horizontal : Axis.vertical,
+      children: mosques
+          .where((element) => element.imageUrl != "" && element.mapUrl != "")
+          .map(
+            (mosque) => AdaptivePadding(
+              child: Column(
+                children: [
+                  FittedBox(
+                    child: Text(
+                      mosque.name,
+                      textScaleFactor: 10,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 8.0,),
-                    if (mosque.imageUrl != "" && mosque.mapUrl != "")
-                      MosquePageItem(mosque: mosque),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 8.0,),
+                  if (mosque.imageUrl != "" && mosque.mapUrl != "")
+                    MosquePageItem(mosque: mosque),
+                ],
               ),
-            )
-            .toList(),
-      ),
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -60,7 +59,19 @@ class MosquePageItem extends StatelessWidget {
                       child: Image.network(
                         mosque.imageUrl,
                         width: width,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) {
+                            return child;
+                          } else {
+                            return const Center(child: CircularProgressIndicator(),);
+                          }
+                        },
+                        errorBuilder: (context, error, stackTrace) {
+                          return const ColoredBox(
+                            color: Colors.grey,
+                          );
+                        },
                       ),
                     ),
                     SizedBox(width: spacer),
