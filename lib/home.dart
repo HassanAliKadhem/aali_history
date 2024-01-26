@@ -40,7 +40,7 @@ class _AaliHomeState extends State<AaliHome> {
               // Icon(Icons.short_text),
               Icon(Icons.mosque),
               Icon(Icons.image),
-              Icon(Icons.info),
+              Icon(Icons.settings),
             ],
             selectedPage: selectedPage,
             onSelected: (value) {
