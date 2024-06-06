@@ -10,6 +10,7 @@ class MosquePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      allowImplicitScrolling: true,
       scrollDirection: IsLarge.of(context) ? Axis.horizontal : Axis.vertical,
       children: mosques
           .where((element) => element.imageUrl != "" && element.mapUrl != "")
