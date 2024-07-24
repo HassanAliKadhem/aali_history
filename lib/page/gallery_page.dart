@@ -38,13 +38,17 @@ class GalleryPage extends StatelessWidget {
                 child: GestureDetector(
                   child: Hero(
                     tag: e,
-                    child: Image.network(e),
+                    child: Image.network(e,errorBuilder: (context, error, stackTrace) {
+                            return Text(error.toString());
+                          },),
                   ),
                   onTap: () {
                     Navigator.of(context).push(PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) {
                         return ImageViewer(
-                          image: Image.network(e),
+                          image: Image.network(e,errorBuilder: (context, error, stackTrace) {
+                            return Text(error.toString());
+                          },),
                           heroTag: e,
                         );
                       },
