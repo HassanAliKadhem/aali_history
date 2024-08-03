@@ -21,7 +21,7 @@ class InfoPage extends StatelessWidget {
                   ),
                   Text(
                     info.description,
-                    textScaleFactor: IsLarge.of(context) ? 1.5 : 1.2,
+                    textScaler: TextScaler.linear(IsLarge.of(context) ? 1.5 : 1.2),
                   ),
                 ],
               ),

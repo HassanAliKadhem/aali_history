@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../data/is_large.dart';
 import '../widget/adaptive_padding.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -9,7 +8,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: adaptiveEdgeInsets(context),
-      scrollDirection: IsLarge.of(context) ? Axis.horizontal : Axis.vertical,
+      scrollDirection: Axis.vertical,
       children: const [
         ListTile(
           title: Text("المصادر"),
@@ -52,7 +51,7 @@ class SettingsPage extends StatelessWidget {
         ),
         AboutListTile(
           icon: Icon(Icons.info),
-          applicationVersion: "1.0.0",
+          applicationVersion: "1.2.0",
           child: Text("عن تاريخ عالي"),
         ),
       ],

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -18,15 +20,13 @@ class MosquePage extends StatelessWidget {
             (mosque) => AdaptivePadding(
               child: Column(
                 children: [
-                  FittedBox(
-                    child: Text(
-                      mosque.name,
-                      textScaleFactor: 10,
-                      maxLines: 2,
-                      textAlign: TextAlign.center,
-                    ),
+                  Text(
+                    mosque.name,
+                    style: Theme.of(context).textTheme.displayLarge,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 8.0,),
+                  const SizedBox(height: 8.0),
                   if (mosque.imageUrl != "" && mosque.mapUrl != "")
                     MosquePageItem(mosque: mosque),
                 ],
@@ -50,66 +50,53 @@ class MosquePageItem extends StatelessWidget {
         builder: (context, constraints) {
           double width = (constraints.maxWidth - spacer) / 2;
           double height = (constraints.maxHeight - spacer) / 2;
+          Widget map = Card(
+            margin: const EdgeInsets.all(0),
+            clipBehavior: Clip.antiAlias,
+            child: WebViewWidget(
+              controller: WebViewController()
+                ..setJavaScriptMode(JavaScriptMode.unrestricted)
+                ..loadHtmlString(mosque.mapUrl),
+            ),
+          );
+          Widget image = Card(
+            margin: const EdgeInsets.all(0),
+            clipBehavior: Clip.antiAlias,
+            child: Image.network(
+              mosque.imageUrl,
+              width: min(width, height),
+              fit: BoxFit.contain,
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) {
+                  return child;
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+              errorBuilder: (context, error, stackTrace) {
+                return const SizedBox();
+              },
+            ),
+          );
+
           return IsLarge.of(context)
-              ? Row(
-                  mainAxisSize: MainAxisSize.min,
+              ? Stack(
                   children: [
-                    Card(
-                      margin: const EdgeInsets.all(0),
-                      clipBehavior: Clip.antiAlias,
-                      child: Image.network(
-                        mosque.imageUrl,
-                        width: width,
-                        fit: BoxFit.contain,
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) {
-                            return child;
-                          } else {
-                            return const Center(child: CircularProgressIndicator(),);
-                          }
-                        },
-                        errorBuilder: (context, error, stackTrace) {
-                          return const ColoredBox(
-                            color: Colors.grey,
-                          );
-                        },
-                      ),
-                    ),
-                    SizedBox(width: spacer),
-                    Card(
-                      margin: const EdgeInsets.all(0),
-                      clipBehavior: Clip.antiAlias,
-                      child: Image.network(
-                        mosque.mapUrl,
-                        width: width,
-                        fit: BoxFit.cover,
-                      ),
+                    map,
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: image,
                     ),
                   ],
                 )
               : Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Card(
-                      margin: const EdgeInsets.all(0),
-                      clipBehavior: Clip.antiAlias,
-                      child: Image.network(
-                        mosque.imageUrl,
-                        height: height,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                    image,
                     SizedBox(height: spacer),
-                    Expanded(
-                      child: Card(
-                        margin: const EdgeInsets.all(0),
-                        clipBehavior: Clip.antiAlias,
-                        child: WebViewWidget(
-                            controller: WebViewController()
-                              ..setJavaScriptMode(JavaScriptMode.unrestricted)
-                              ..loadHtmlString(mosque.mapUrl)),
-                      ),
-                    ),
+                    Expanded(child: map),
                   ],
                 );
         },
