@@ -51,7 +51,7 @@ class SettingsPage extends StatelessWidget {
         ),
         AboutListTile(
           icon: Icon(Icons.info),
-          applicationVersion: "1.2.0",
+          applicationVersion: "1.3.0",
           child: Text("عن تاريخ عالي"),
         ),
       ],
