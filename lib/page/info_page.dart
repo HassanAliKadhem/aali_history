@@ -10,24 +10,25 @@ class InfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       scrollDirection: IsLarge.of(context) ? Axis.horizontal : Axis.vertical,
-      children: infos
-          .map(
-            (info) => AdaptivePadding(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Image.network(info.imageUrl),
+      children:
+          infos
+              .map(
+                (info) => AdaptivePadding(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(child: Image.network(info.imageUrl)),
+                      Text(
+                        info.description,
+                        textScaler: TextScaler.linear(
+                          IsLarge.of(context) ? 1.5 : 1.2,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    info.description,
-                    textScaler: TextScaler.linear(IsLarge.of(context) ? 1.5 : 1.2),
-                  ),
-                ],
-              ),
-            ),
-          )
-          .toList(),
+                ),
+              )
+              .toList(),
     );
   }
 }

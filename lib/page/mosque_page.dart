@@ -14,26 +14,29 @@ class MosquePage extends StatelessWidget {
     return PageView(
       allowImplicitScrolling: true,
       scrollDirection: IsLarge.of(context) ? Axis.horizontal : Axis.vertical,
-      children: mosques
-          .where((element) => element.imageUrl != "" && element.mapUrl != "")
-          .map(
-            (mosque) => AdaptivePadding(
-              child: Column(
-                children: [
-                  Text(
-                    mosque.name,
-                    style: Theme.of(context).textTheme.displayLarge,
-                    maxLines: 2,
-                    textAlign: TextAlign.center,
+      children:
+          mosques
+              .where(
+                (element) => element.imageUrl != "" && element.mapUrl != "",
+              )
+              .map(
+                (mosque) => AdaptivePadding(
+                  child: Column(
+                    children: [
+                      Text(
+                        mosque.name,
+                        style: Theme.of(context).textTheme.displayLarge,
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 8.0),
+                      if (mosque.imageUrl != "" && mosque.mapUrl != "")
+                        MosquePageItem(mosque: mosque),
+                    ],
                   ),
-                  const SizedBox(height: 8.0),
-                  if (mosque.imageUrl != "" && mosque.mapUrl != "")
-                    MosquePageItem(mosque: mosque),
-                ],
-              ),
-            ),
-          )
-          .toList(),
+                ),
+              )
+              .toList(),
     );
   }
 }
@@ -54,9 +57,10 @@ class MosquePageItem extends StatelessWidget {
             margin: const EdgeInsets.all(0),
             clipBehavior: Clip.antiAlias,
             child: WebViewWidget(
-              controller: WebViewController()
-                ..setJavaScriptMode(JavaScriptMode.unrestricted)
-                ..loadHtmlString(mosque.mapUrl),
+              controller:
+                  WebViewController()
+                    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+                    ..loadHtmlString(mosque.mapUrl),
             ),
           );
           Widget image = Card(
@@ -64,15 +68,13 @@ class MosquePageItem extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             child: Image.network(
               mosque.imageUrl,
-              width: min(width, height),
+              width: IsLarge.of(context) ? min(width, height) : null,
               fit: BoxFit.contain,
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) {
                   return child;
                 } else {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
+                  return const Center(child: CircularProgressIndicator());
                 }
               },
               errorBuilder: (context, error, stackTrace) {
@@ -80,25 +82,21 @@ class MosquePageItem extends StatelessWidget {
               },
             ),
           );
-
           return IsLarge.of(context)
               ? Stack(
-                  children: [
-                    map,
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: image,
-                    ),
-                  ],
-                )
+                children: [
+                  map,
+                  Align(alignment: Alignment.topLeft, child: image),
+                ],
+              )
               : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    image,
-                    SizedBox(height: spacer),
-                    Expanded(child: map),
-                  ],
-                );
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  image,
+                  SizedBox(height: spacer),
+                  Expanded(child: map),
+                ],
+              );
         },
       ),
     );

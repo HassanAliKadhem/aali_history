@@ -19,36 +19,40 @@ class FloatingNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> items = homePageIcons
-        .map(
-          (e) => AnimatedContainer(
-            duration: const Duration(milliseconds: 250),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: homePageIcons.indexOf(e) != selectedPage
-                  ? null
-                  : Colors.red.shade100.withOpacity(0.5),
-            ),
-            child: GestureDetector(
-              behavior: HitTestBehavior.translucent,
-              onTap: () {
-                onSelected(homePageIcons.indexOf(e));
-              },
-              child: Padding(
-                padding: EdgeInsets.all(navButtonSize / 2),
-                child: e,
+    List<Widget> items =
+        homePageIcons
+            .map(
+              (e) => AnimatedContainer(
+                duration: const Duration(milliseconds: 250),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color:
+                      homePageIcons.indexOf(e) != selectedPage
+                          ? null
+                          : Colors.red.shade100.withOpacity(0.5),
+                ),
+                child: GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+                    onSelected(homePageIcons.indexOf(e));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(navButtonSize / 2),
+                    child: e,
+                  ),
+                ),
               ),
-            ),
-          ),
-        )
-        .toList();
+            )
+            .toList();
     return Align(
       alignment:
           IsLarge.of(context) ? Alignment.centerRight : Alignment.bottomCenter,
       child: FittedBox(
         child: Container(
           clipBehavior: Clip.antiAlias,
-          margin: const EdgeInsets.all(30),
+          margin: EdgeInsets.all(
+            MediaQuery.viewPaddingOf(context).bottom + 15.0,
+          ),
           padding: const EdgeInsets.all(4.0),
           decoration: BoxDecoration(
             color: Colors.black26,
@@ -56,17 +60,18 @@ class FloatingNavigationBar extends StatelessWidget {
           ),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
-            child: IsLarge.of(context)
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: items,
-                  )
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: items,
-                  ),
+            child:
+                IsLarge.of(context)
+                    ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: items,
+                    )
+                    : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: items,
+                    ),
           ),
         ),
       ),

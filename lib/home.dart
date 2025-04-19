@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'page/gallery_page.dart';
 import 'page/info_page.dart';
@@ -22,34 +23,30 @@ class _AaliHomeState extends State<AaliHome> {
       extendBodyBehindAppBar: true,
       extendBody: true,
       appBar: AppBar(),
-      body: Stack(
-        children: [
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            child: const [
+      bottomNavigationBar: FloatingNavigationBar(
+        homePageIcons: const [
+          Icon(Icons.info),
+          Icon(Icons.mosque),
+          Icon(Icons.image),
+          Icon(Icons.settings),
+        ],
+        selectedPage: selectedPage,
+        onSelected: (value) {
+          setState(() {
+            selectedPage = value;
+          });
+        },
+      ),
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 500),
+        child:
+            const [
               InfoPage(),
               // Placeholder(),
               MosquePage(),
               GalleryPage(),
               SettingsPage(),
             ][selectedPage],
-          ),
-          FloatingNavigationBar(
-            homePageIcons: const [
-              Icon(Icons.info),
-              // Icon(Icons.short_text),
-              Icon(Icons.mosque),
-              Icon(Icons.image),
-              Icon(Icons.settings),
-            ],
-            selectedPage: selectedPage,
-            onSelected: (value) {
-              setState(() {
-                selectedPage = value;
-              });
-            },
-          ),
-        ],
       ),
     );
   }
