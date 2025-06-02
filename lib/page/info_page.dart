@@ -17,7 +17,9 @@ class InfoPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(child: Image.network(info.imageUrl)),
+                      Expanded(
+                        child: Image.asset("assets/images/${info.imageUrl}"),
+                      ),
                       Text(
                         info.description,
                         textScaler: TextScaler.linear(

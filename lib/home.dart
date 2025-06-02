@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'page/gallery_page.dart';
 import 'page/info_page.dart';

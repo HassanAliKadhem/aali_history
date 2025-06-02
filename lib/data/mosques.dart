@@ -7,71 +7,91 @@ class Mosque {
 
 List<Mosque> mosques = [
   Mosque(
-      "مسجد أمير محمد",
-      "https://fastly.4sqi.net/img/general/600x600/7820396_WgA05pJcyt6RnwbxspUjHPm25Y8TdnBDm8h75TkHQlE.jpg",
-      getMapView(
-        "%D9%85%D8%B3%D8%AC%D8%AF%20%D8%A3%D9%85%D9%8A%D8%B1%20%D9%85%D8%AD%D9%85%D8%AF&t",
-      )),
-  Mosque("مسجد الشيخ محمد", "", ""),
+    "مسجد أمير محمد",
+    "ammer_mohamed.jpg",
+    getMapView(
+      "%D9%85%D8%B3%D8%AC%D8%AF%20%D8%A3%D9%85%D9%8A%D8%B1%20%D9%85%D8%AD%D9%85%D8%AF&t",
+    ),
+  ),
+  // Mosque("مسجد الشيخ محمد", "", ""),
   Mosque(
     "مسجد عين رستان",
-    "http://media.alwasatnews.com/data/2015/4510/images/loc-40.jpg",
+    "aaen_rastan.jpg",
     getMapView(
-        "%D9%85%D8%B3%D8%AC%D8%AF%20%D8%B9%D9%8A%D9%86%20%D8%B1%D8%B3%D8%AA%D8%A7%D9%86&t"),
+      "%D9%85%D8%B3%D8%AC%D8%AF%20%D8%B9%D9%8A%D9%86%20%D8%B1%D8%B3%D8%AA%D8%A7%D9%86&t",
+    ),
   ),
   Mosque(
     "مسجد الإمام علي\n(السادة)",
-    "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1685&strServerFolder=PhotoGalary",
+    "immam_ali.jpeg",
     getMapView("مسجد الامام علي (السادة)"),
   ),
-  Mosque("مسجد محاذي لضريح الشيخ محمد", "", ""),
+  // Mosque("مسجد محاذي لضريح الشيخ محمد", "", ""),
   Mosque(
-      "مسجد الغراية",
-      "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1658&strServerFolder=PhotoGalary",
-      getMapView("مسجد الغراية عالي")),
-  Mosque("مسجد الأخضر", "", getMapView("مسجد الأخضر")),
-  Mosque("مسجد العلويات", "", ""),
-  Mosque("مسجد الحوطة القنطارة", "", ""),
+    "مسجد الغراية",
+    "Algharrayah_Mosque.jpg",
+    getMapView("مسجد الغراية عالي"),
+  ),
+  // Mosque("مسجد الأخضر", "", getMapView("مسجد الأخضر")),
+  // Mosque("مسجد العلويات", "", ""),
+  // Mosque("مسجد الحوطة القنطارة", "", ""),
   Mosque(
-      "مسجد الكرد",
-      "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1622&strServerFolder=PhotoGalary",
-      getMapView("مسجد الكرد عالي")), // https://www.jwd.gov.bh/en/mosques/5243/
+    "مسجد الكرد",
+    "alkurd_mosque.jpg",
+    getMapView("مسجد الكرد عالي"),
+  ), // https://www.jwd.gov.bh/en/mosques/5243/
   Mosque(
-      "مسجد السلامية الشرقي\n(أبو لومي)",
-      "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1721&strServerFolder=PhotoGalary",
-      getMapView(
-          "مسجد السلامية الشرقي\n(أبو لومي)")), //https://www.jwd.gov.bh/ar/mosques/5976/
-  Mosque("مسجد السلامية الغربي", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1750&strServerFolder=PhotoGalary", getMapView("مسجد السلامية الغربي عالي")),
-  Mosque("مسجد ملا حسين", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=5110&strServerFolder=RealEstate", getMapView("مسجد ملا حسين عالي")),
-  Mosque("مسجد الجبيلية", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=5184&strServerFolder=RealEstate", getMapView("مسجد الجبيلية عالي")),
-  Mosque("مسجد الحوراء", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=5979&strServerFolder=RealEstate", getMapView("مسجد الحوراء عالي")),
-  Mosque("مسجد النبيه إبراهيم", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1676&strServerFolder=PhotoGalary", getMapView("مسجد النبيه إبراهيم عالي")),
-  Mosque("مسجد الزهراء", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1583&strServerFolder=PhotoGalary", getMapView("مسجد الزهراء عالي")),
+    "مسجد السلامية الشرقي\n(أبو لومي)",
+    "alsalamya_sharghi.jpg",
+    getMapView("مسجد السلامية الشرقي (أبو لومي)"),
+  ), //https://www.jwd.gov.bh/ar/mosques/5976/
+  Mosque(
+    "مسجد السلامية الغربي",
+    "alsalamya_gharbi.jpg",
+    getMapView("مسجد السلامية الغربي عالي"),
+  ),
+  Mosque("مسجد ملا حسين", "mulla_husain.jpg", getMapView("مسجد ملا حسين عالي")),
+  Mosque(
+    "مسجد الجبيلية",
+    "Alajabilah Mosque.jpg",
+    getMapView("مسجد الجبيلية عالي"),
+  ),
+  Mosque("مسجد الحوراء", "alhawra_zainab.jpg", getMapView("مسجد الحوراء عالي")),
+  // Mosque(
+  //   "مسجد النبيه إبراهيم",
+  //   "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=PhotoScan&tablename=Real_PhotoTbl&idfieldname=PhotoID&strIDFieldValue=1676&strServerFolder=PhotoGalary",
+  //   getMapView("مسجد النبيه إبراهيم عالي"),
+  // ),
+  Mosque("مسجد الزهراء", "Alzahra_Mosque.jpg", getMapView("مسجد الزهراء عالي")),
   Mosque(
     "جامع عالي القديم\n(جامع عالي معن)",
-    "http://media.alwasatnews.com/data/2016/5130/images/54944a79aca4cdd1.jpg",
+    "aali_maan_mosque.jpg",
     getMapView("جامع عالي معن"),
   ), // http://www.alwasatnews.com/news/1161732.html
-  Mosque("جامع عالي الجديد", "", ""),
+  // Mosque("جامع عالي الجديد", "", ""),
   Mosque(
     "مسجد السوق",
-    "http://media.alwasatnews.com/data/2016/5005/images/loc-m-1-6.jpg",
+    "alsooq_mosque.jpg",
     getMapView("مسجد السوق عالي"),
   ), // http://www.alwasatnews.com/news/1116661.html
-  Mosque("مسجد الشيخ عيسى", "", ""),
+  // Mosque("مسجد الشيخ عيسى", "", ""),
   Mosque(
     "مسجد الخرارة",
-    "http://media.alwasatnews.com/data/2016/5005/images/69f77b6305c45690.jpg",
+    "alkarara_mosque.jpg",
     getMapView("مسجد الخرارة"),
   ), // http://www.alwasatnews.com/news/1116661.html
+  Mosque("مسجد الإمام الحسين", "", getMapView("مسجد الإمام الحسين عالي")),
+  // Mosque(
+  //   "مسجد الإمام الحسن",
+  //   "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=3052&strServerFolder=RealEstate",
+  //   getMapView("مسجد الإمام الحسن اسكان عالي"),
+  // ),
   Mosque(
-    "مسجد الإمام الحسين",
-    "",
-    getMapView("مسجد الإمام الحسين عالي"),
+    "مسجد الإمام الرضا",
+    "immam_reda_mosque.jpg",
+    getMapView("مسجد الإمام الرضا اسكان عالي"),
   ),
-  Mosque("مسجد الإمام الحسن", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=3052&strServerFolder=RealEstate", getMapView("مسجد الإمام الحسن اسكان عالي")),
-  Mosque("مسجد الإمام الرضا", "https://www.jwd.gov.bh/ImageProcessor.aspx?fieldname=Scan&tablename=Real_RealEstateMain&idfieldname=iRealEstNo&strIDFieldValue=3057&strServerFolder=RealEstate", getMapView("مسجد الإمام الرضا اسكان عالي")),
-  Mosque("جامع موضي", "https://lh6.googleusercontent.com/DCcRyDhJPrf8QT5uBtY34fwNwUVEttn3e-BpWfYaXLGgNjGsnBEJJfjVNiX2RYIGGiq05OWCkIZY_ftRBLdBsBU=w16383", getMapView("جامع موضي عالي")),
+  Mosque("جامع موضي", "moodhe_mosque.jpg", getMapView("جامع موضي عالي")),
 ];
 
 String getMapView(String query) {

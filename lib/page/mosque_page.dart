@@ -66,17 +66,10 @@ class MosquePageItem extends StatelessWidget {
           Widget image = Card(
             margin: const EdgeInsets.all(0),
             clipBehavior: Clip.antiAlias,
-            child: Image.network(
-              mosque.imageUrl,
+            child: Image.asset(
+              "assets/images/${mosque.imageUrl}",
               width: IsLarge.of(context) ? min(width, height) : null,
               fit: BoxFit.contain,
-              loadingBuilder: (context, child, loadingProgress) {
-                if (loadingProgress == null) {
-                  return child;
-                } else {
-                  return const Center(child: CircularProgressIndicator());
-                }
-              },
               errorBuilder: (context, error, stackTrace) {
                 return const SizedBox();
               },

@@ -29,9 +29,7 @@ class _ImageViewerState extends State<ImageViewer> {
         fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
-          GestureDetector(
-            onTap: () => Navigator.pop(context),
-          ),
+          GestureDetector(onTap: () => Navigator.pop(context)),
           FittedBox(
             child: GestureDetector(
               onScaleStart: (details) {
@@ -68,23 +66,23 @@ class _ImageViewerState extends State<ImageViewer> {
                 });
               },
               child: TweenAnimationBuilder(
-                  tween: Tween<Offset>(
-                      begin: Offset.zero, end: _offset + _sessionOffset),
+                tween: Tween<Offset>(
+                  begin: Offset.zero,
+                  end: _offset + _sessionOffset,
+                ),
+                duration: _currentDuration,
+                curve: Curves.easeOut,
+                child: AnimatedScale(
                   duration: _currentDuration,
+                  scale: _scale,
                   curve: Curves.easeOut,
-                  child: AnimatedScale(
-                    duration: _currentDuration,
-                    scale: _scale,
-                    curve: Curves.easeOut,
-                    filterQuality: FilterQuality.high,
-                    child: Hero(tag: widget.heroTag ?? "", child: widget.image),
-                  ),
-                  builder: (context, value, child) {
-                    return Transform.translate(
-                      offset: value,
-                      child: child,
-                    );
-                  }),
+                  filterQuality: FilterQuality.high,
+                  child: Hero(tag: widget.heroTag ?? "", child: widget.image),
+                ),
+                builder: (context, value, child) {
+                  return Transform.translate(offset: value, child: child);
+                },
+              ),
             ),
           ),
         ],
