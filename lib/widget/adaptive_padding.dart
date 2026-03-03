@@ -17,9 +17,9 @@ class AdaptivePadding extends StatelessWidget {
 
 EdgeInsets adaptiveEdgeInsets(BuildContext context) {
   return EdgeInsets.only(
-    right: IsLarge.of(context) ? 180 : 42,
+    right: IsLarge.of(context) ? 180.0 : 42.0,
     bottom: 142,
-    left: 42,
-    top: 42,
+    left: 42.0,
+    top: 64.0,
   );
 }

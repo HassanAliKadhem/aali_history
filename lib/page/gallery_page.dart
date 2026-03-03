@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 import '../data/infos.dart';
@@ -52,6 +50,7 @@ class GalleryPage extends StatelessWidget {
                             return ImageViewer(
                               image: Image.asset(
                                 "assets/images/$e",
+                                fit: .cover,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Text(error.toString());
                                 },

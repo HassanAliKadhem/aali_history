@@ -19,9 +19,7 @@ class _AaliHomeState extends State<AaliHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       extendBody: true,
-      appBar: AppBar(),
       bottomNavigationBar: FloatingNavigationBar(
         homePageIcons: const [
           Icon(Icons.info),

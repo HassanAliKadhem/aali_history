@@ -1,5 +1,4 @@
 import 'package:aali_history/data/is_large.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,7 +40,6 @@ class AaliApp extends StatelessWidget {
         ),
       ),
       locale: const Locale("ar", "AE"),
-      scrollBehavior: const CupertinoScrollBehavior(),
       home: Directionality(
         textDirection: TextDirection.rtl,
         child: IsLarge(
